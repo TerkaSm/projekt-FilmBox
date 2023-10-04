@@ -104,3 +104,19 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+const poznamkaFormulareElement = document.querySelector('#note-form')
+const poznamkaInput = document.querySelector('#message-input')
+const checkboxElement = document.querySelector('#terms-checkbox')
+
+poznamkaFormulareElement.addEventListener('submit', (event) => {
+	event.preventDefault();
+
+	if (poznamkaInput === '') {
+		poznamkaInput.classList.add('is-invalid')
+	}
+
+	if (checkboxElement !== true) {
+		checkboxElement.classList.add('is-invalid')
+	}
+  });
