@@ -105,6 +105,8 @@ const filmy = [
 	},
 ]
 
+
+// 1) form - poznámka
 const poznamkaFormulareElement = document.querySelector('#note-form')
 const poznamkaInput = document.querySelector('#message-input')
 const checkboxElement = document.querySelector('#terms-checkbox')
@@ -112,11 +114,18 @@ const checkboxElement = document.querySelector('#terms-checkbox')
 poznamkaFormulareElement.addEventListener('submit', (event) => {
 	event.preventDefault();
 
-	if (poznamkaInput === '') {
+	if (poznamkaInput.value.length === 0) {
 		poznamkaInput.classList.add('is-invalid')
+		poznamkaInput.focus()
+		return
 	}
 
-	if (checkboxElement !== true) {
+	if (checkboxElement.checked === false) {
 		checkboxElement.classList.add('is-invalid')
+		poznamkaInput.focus()
+		return
 	}
+
+	poznamkaFormulareElement.innerHTML = `<p class="card-text">${poznamkaInput.value}</p>`
   });
+  
