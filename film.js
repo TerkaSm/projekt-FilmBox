@@ -106,7 +106,19 @@ const filmy = [
 ]
 
 
-// 1) form - poznámka
+const filmyId = window.location.hash.slice(1);
+const filmData = filmy[filmyId]
+
+filmy.forEach(
+	(film) => {
+		
+	}
+)
+
+
+
+
+//  form - poznámka
 const poznamkaFormulareElement = document.querySelector('#note-form')
 const poznamkaInput = document.querySelector('#message-input')
 const checkboxElement = document.querySelector('#terms-checkbox')
@@ -128,4 +140,3 @@ poznamkaFormulareElement.addEventListener('submit', (event) => {
 
 	poznamkaFormulareElement.innerHTML = `<p class="card-text">${poznamkaInput.value}</p>`
   });
-  
